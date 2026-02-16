@@ -49,6 +49,9 @@ This repository uses [skills.sh](https://skills.sh) for reusable agent capabilit
 # Find skills related to testing
 npx skills find testing
 
+# Install the find-skills skill (for skill discovery)
+npx skills add vercel-labs/skills --skill find-skills
+
 # Install a skill from agent-skills repository
 npx skills add vercel-labs/agent-skills --skill vercel-react-best-practices
 

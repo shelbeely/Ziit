@@ -28,14 +28,14 @@ jobs:
         env:
           CI: true
 
-      - name: Test skills list command
+      - name: Install find-skills skill
         run: |
-          # Test that skills list command works (should return empty initially)
-          npx skills list || echo "No skills installed yet (expected)"
-          echo "Skills list command working"
+          # Install the find-skills skill for agent skill discovery
+          npx skills add vercel-labs/skills --skill find-skills -y
+          echo "find-skills skill installed successfully"
 
-      - name: List available skills
+      - name: Verify skills installation
         run: |
-          # List skills from vercel-labs/agent-skills repository
-          npx skills add vercel-labs/agent-skills --list
+          # Verify the skill was installed
+          npx skills list
           echo "Skills CLI installation test completed successfully"
