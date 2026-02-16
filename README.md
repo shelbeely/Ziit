@@ -1,11 +1,16 @@
 ### For users confused why their account got deleted check this issue https://github.com/0pandadev/Ziit/issues/81
 
+> [!NOTE]
+> **Ziit-Agent: Enhanced time tracking for GitHub Copilot Coding Agent**
+> 
+> This is a specialized fork of [Ziit](https://github.com/0PandaDEV/Ziit) with first-class support for GitHub Copilot Coding Agent. Track both traditional coding activity and AI-assisted development sessions in one unified dashboard.
+
 <p align="center">
    <img src="https://github.com/user-attachments/assets/bc6a1efd-2a7a-473a-8f09-ae75cafeba84"/>
 </p>
 
 <h3 align="center">
-   The Swiss army knife of code time tracking.
+   Time tracking for developers using AI coding agents
 </h3>
 
 <div align="center">
@@ -16,6 +21,8 @@
     <a href="https://ziit.app/leaderboard">Leaderboard</a>
     <span>  •  </span>
     <a href="https://discord.gg/Y7SbYphVw9">Discord</a>
+    <span>  •  </span>
+    <a href="https://github.com/0PandaDEV/Ziit">Upstream: Ziit</a>
 </div>
 
 <br>
@@ -36,11 +43,25 @@
   </a>
 </details>
 
-## What is Ziit?
+## What is Ziit-Agent?
 
-Ziit (pronounced 'tseet') is an open-source, self-hostable alternative to WakaTime. It provides a clean, minimal, and fast dashboard for displaying coding statistics, while ensuring privacy by keeping all data on your own server. Ziit tracks coding activity such as projects, languages, editors, files, branches, operating systems, and time spent coding all presented in a familiar interface inspired by Plausible Analytics.
+Ziit-Agent is a specialized fork of Ziit (pronounced 'tseet'), an open-source, self-hostable alternative to WakaTime. While maintaining all of Ziit's original capabilities, Ziit-Agent adds comprehensive GitHub Copilot Coding Agent integration to track AI-assisted development workflows alongside traditional coding activity.
+
+Like the original Ziit, it provides a clean, minimal, and fast dashboard for displaying coding statistics, while ensuring privacy by keeping all data on your own server. It tracks coding activity such as projects, languages, editors, files, branches, operating systems, and time spent coding—all presented in a familiar interface inspired by Plausible Analytics.
 
 ![Ziit](https://github.com/user-attachments/assets/bf8e8d72-3181-47e7-924f-537c74f68819)
+
+## About This Fork
+
+Ziit-Agent enhances the original Ziit with first-class support for **GitHub Copilot Coding Agent**, enabling comprehensive tracking of AI-assisted development workflows. Key enhancements include:
+
+- **Hooks-based integration** with GitHub Copilot Coding Agent
+- **Extended heartbeat schema** to capture agent sessions, prompts, tool usage, and errors
+- **Rich metadata tracking** for AI coding sessions including tool names, event types, and custom context
+- **Cross-platform support** with both Bash and PowerShell hook scripts
+- **Privacy-first approach** where all AI coding activity data stays on your Ziit instance
+
+Ziit-Agent is perfect for developers who want to understand how they work with AI coding assistants while maintaining privacy and control over their data.
 
 ## Features
 
@@ -57,7 +78,7 @@ Ziit (pronounced 'tseet') is an open-source, self-hostable alternative to WakaTi
 - Public leaderboard to see who has the most coding hours.
 - More to come...
 
-## How to use Ziit
+## How to use Ziit-Agent
 
 First [setup an instance](https://docs.ziit.app/deploy) or sign up on the public one <https://ziit.app> then install the extension by searching for "Ziit" in your favorite IDE.
 
@@ -108,3 +129,29 @@ Quick setup:
    ```bash
    bun dev
    ```
+
+## Upstream & Contributing
+
+Ziit-Agent is a fork of [Ziit](https://github.com/0PandaDEV/Ziit) by [0PandaDEV](https://github.com/0PandaDEV). 
+
+### Relationship with Upstream
+
+- **Core features** are maintained in sync with upstream Ziit
+- **Agent-specific features** are unique to this fork
+- Bug fixes and improvements to core functionality may be contributed back to upstream
+
+### Contributing
+
+- For **Copilot/Agent integration issues**: Open an issue in this repository
+- For **core Ziit features**: Consider contributing to [upstream Ziit](https://github.com/0PandaDEV/Ziit)
+- See upstream's [CONTRIBUTING.md](https://github.com/0PandaDEV/Ziit/blob/main/CONTRIBUTING.md) for core contribution guidelines
+
+## License
+
+This project maintains the same license as the original Ziit project. See [LICENSE](LICENSE) for details.
+
+## Credits
+
+- **Original Ziit project**: [0PandaDEV/Ziit](https://github.com/0PandaDEV/Ziit)
+- **GitHub Copilot Coding Agent integration**: Enhanced by this fork
+- All contributors to the original Ziit project

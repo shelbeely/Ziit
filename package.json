@@ -1,5 +1,7 @@
 {
-  "name": "nuxt-app",
+  "name": "ziit-agent",
+  "version": "1.0.0",
+  "description": "Time tracking for developers using AI coding agents - Fork of Ziit with GitHub Copilot Coding Agent integration",
   "private": true,
   "type": "module",
   "scripts": {
