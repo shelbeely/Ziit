@@ -19,6 +19,7 @@ useKeybind({
 <style lang="scss">
 :root {
   /* Material Design 3 - Expressive Color System */
+  /* Note: Background color changed from #191919 to #1c1b1f for MD3 compliance */
   /* Surface Colors */
   --md-sys-color-background: #1c1b1f;
   --md-sys-color-surface: #1c1b1f;

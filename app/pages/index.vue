@@ -493,6 +493,23 @@ function renderChart() {
 
   const chartConfig = getChartConfig();
 
+  // Get MD3 colors from CSS custom properties
+  const styles = getComputedStyle(document.documentElement);
+  const primaryColor = styles.getPropertyValue("--md-sys-color-primary").trim();
+  const primaryContainer = styles
+    .getPropertyValue("--md-sys-color-primary-container")
+    .trim();
+  const onSurfaceVariant = styles
+    .getPropertyValue("--md-sys-color-on-surface-variant")
+    .trim();
+  const surfaceContainerHigh = styles
+    .getPropertyValue("--md-sys-color-surface-container-high")
+    .trim();
+  const outlineVariant = styles
+    .getPropertyValue("--md-sys-color-outline-variant")
+    .trim();
+  const onSurface = styles.getPropertyValue("--md-sys-color-on-surface").trim();
+
   chart = new Chart(ctx, {
     type: "line",
     data: {
@@ -501,15 +518,15 @@ function renderChart() {
         {
           label: "Coding Time (hours)",
           data: chartConfig.data,
-          borderColor: "#ffb68c",
+          borderColor: primaryColor,
           borderWidth: 3,
-          pointBackgroundColor: "#ffb68c",
+          pointBackgroundColor: primaryColor,
           pointRadius: 0,
           pointHoverRadius: 6,
           pointHoverBorderWidth: 2,
-          pointHoverBorderColor: "#703900",
+          pointHoverBorderColor: primaryContainer,
           fill: "start",
-          backgroundColor: "rgba(255, 182, 140, 0.1)",
+          backgroundColor: `${primaryColor}1a`, // 10% opacity
           tension: 0.3,
           stepped: false,
         },
@@ -544,7 +561,7 @@ function renderChart() {
               family: "Outfit",
               weight: 500,
             },
-            color: "#ccc4cf",
+            color: onSurfaceVariant,
           },
           border: {
             display: false,
@@ -556,7 +573,7 @@ function renderChart() {
             display: false,
           },
           grid: {
-            color: "rgba(204, 196, 207, 0.08)",
+            color: `${onSurfaceVariant}14`, // 8% opacity
             drawTicks: false,
           },
           ticks: {
@@ -565,7 +582,7 @@ function renderChart() {
               family: "Outfit",
               weight: 500,
             },
-            color: "#ccc4cf",
+            color: onSurfaceVariant,
             padding: 8,
             callback: function (value) {
               const numValue = Number(value);
@@ -584,11 +601,11 @@ function renderChart() {
       },
       plugins: {
         tooltip: {
-          backgroundColor: "#2b292d",
-          borderColor: "#49454e",
+          backgroundColor: surfaceContainerHigh,
+          borderColor: outlineVariant,
           borderWidth: 1,
-          titleColor: "#e6e1e6",
-          bodyColor: "#e6e1e6",
+          titleColor: onSurface,
+          bodyColor: onSurface,
           padding: 16,
           cornerRadius: 12,
           displayColors: false,
