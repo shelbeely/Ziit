@@ -17,16 +17,19 @@ useKeybind({
 </script>
 
 <style lang="scss">
+@import '~~/styles/material-design-3-tokens.scss';
+
+// Keep legacy variables for backward compatibility
 :root {
-  --background: #191919;
-  --element: #2b2b2b;
-  --border: #ffffff1a;
+  --background: var(--md3-background);
+  --element: var(--md3-surface-container);
+  --border: var(--md3-outline-variant);
 
-  --accent: #ff6200;
+  --accent: var(--md3-primary);
 
-  --text: #e6e6e6;
-  --text-secondary: #a6a6a6;
-  --text-muted: #666666;
+  --text: var(--md3-on-surface);
+  --text-secondary: var(--md3-on-surface-variant);
+  --text-muted: var(--md3-outline);
 }
 
 @font-face {
@@ -54,37 +57,47 @@ useKeybind({
 }
 
 body {
-  background-color: var(--background);
-  color: var(--text);
-  font-size: 14px;
+  background-color: var(--md3-background);
+  color: var(--md3-on-background);
+  font-size: var(--md3-typescale-body-medium-size);
   font-family: Outfit;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scrollbar-color: var(--text-secondary) transparent;
+  scrollbar-color: var(--md3-on-surface-variant) transparent;
 
   &::-webkit-scrollbar {
-    width: 4px;
+    width: 8px;
   }
 
   &::-webkit-scrollbar-track {
-    background: var(--background);
+    background: var(--md3-surface-container-low);
   }
 
   &::-webkit-scrollbar-thumb {
-    background: var(--text-secondary);
+    background: var(--md3-on-surface-variant);
+    border-radius: var(--md3-shape-corner-full);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--md3-primary);
   }
 }
 
 button,
 input {
   font-family: Outfit;
-  font-size: 14px;
+  font-size: var(--md3-typescale-body-medium-size);
 }
 
 a {
   text-decoration: none;
-  color: var(--text);
+  color: var(--md3-on-surface);
+  transition: color var(--md3-motion-duration-short4) var(--md3-motion-easing-standard);
+
+  &:hover {
+    color: var(--md3-primary);
+  }
 }
 </style>
