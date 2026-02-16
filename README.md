@@ -45,11 +45,13 @@ Ziit (pronounced 'tseet') is an open-source, self-hostable alternative to WakaTi
 ## Features
 
 - Time tracking directly from VS Code to your Ziit instance of choice.
+- **GitHub Copilot Coding Agent integration** - Track your AI-assisted coding sessions with hooks support.
 - Filtering using different time ranges.
 - Clean & Minimal dashboard showing only the information needed.
 - Login with GitHub or Email and Password.
 - Import Data from Wakatime or a WakAPI Instance.
 - Saves data about your current project, OS, editor, file, language and git branch.
+- Extended heartbeat data including category, event types, tool usage, and custom metadata.
 - Badges to embed coding time for a project into a README.
 - Public stats page to see information from the whole Ziit instance.
 - Public leaderboard to see who has the most coding hours.
@@ -65,6 +67,15 @@ Supported IDE's:
 - [JetBrains](https://plugins.jetbrains.com/plugin/27391-ziit)
 
 For more details on how to setup the IDE extensions checkout the [docs](https://docs.ziit.app/extensions).
+
+### GitHub Copilot Coding Agent Integration
+
+Track your AI-assisted coding sessions by enabling hooks support. See [`.github/hooks/README.md`](.github/hooks/README.md) for detailed setup instructions.
+
+Quick setup:
+1. Set your Ziit API key: `export ZIIT_API_KEY="your-api-key"`
+2. Hooks automatically activate when using GitHub Copilot Coding Agent
+3. View AI coding activity in your Ziit dashboard
 
 ## Development
 
