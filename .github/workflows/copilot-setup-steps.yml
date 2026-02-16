@@ -1,0 +1,34 @@
+name: Copilot Setup Steps
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install skills CLI
+        run: |
+          # Install skills non-interactively
+          npx --yes skills add vercel-labs/skills/find-skills
+        env:
+          CI: true
+
+      - name: Verify skills installation
+        run: |
+          # Verify skills CLI is working
+          npx skills --version
+          echo "Skills CLI installed successfully"
