@@ -489,12 +489,15 @@ function renderChart() {
           label: "Coding Time (hours)",
           data: chartConfig.data,
           borderColor: "#ff6200",
-          borderWidth: 3,
+          borderWidth: 2,
           pointBackgroundColor: "#ff6200",
           pointRadius: 0,
-          pointHoverRadius: 4,
+          pointHoverRadius: 6,
+          pointHoverBorderWidth: 2,
+          pointHoverBorderColor: "#ffffff",
           fill: "start",
-          tension: 0,
+          backgroundColor: "rgba(255, 98, 0, 0.08)",
+          tension: 0.3,
           stepped: false,
         },
       ],
@@ -502,11 +505,14 @@ function renderChart() {
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      animation: false,
+      animation: {
+        duration: 300,
+        easing: "easeInOutCubic",
+      },
       elements: {
         line: {
-          tension: 0,
-          borderJoinStyle: "miter",
+          tension: 0.3,
+          borderJoinStyle: "round",
         },
         point: {
           hitRadius: 10,
@@ -522,7 +528,8 @@ function renderChart() {
             autoSkip: true,
             font: {
               size: 12,
-              family: "ChivoMono",
+              family: "Outfit",
+              weight: 500,
             },
             color: "#666666",
           },
@@ -536,13 +543,14 @@ function renderChart() {
             display: false,
           },
           grid: {
-            color: "rgba(255, 255, 255, 0.05)",
+            color: "rgba(199, 198, 202, 0.1)",
             drawTicks: false,
           },
           ticks: {
             font: {
               size: 12,
-              family: "ChivoMono",
+              family: "Outfit",
+              weight: 500,
             },
             color: "#666666",
             padding: 8,
@@ -563,21 +571,21 @@ function renderChart() {
       },
       plugins: {
         tooltip: {
-          backgroundColor: "#2b2b2b",
-          borderColor: "#ffffff1a",
+          backgroundColor: "#1e2022",
+          borderColor: "#48464c",
           borderWidth: 1,
-          titleColor: "#e6e6e6",
-          bodyColor: "#e6e6e6",
+          titleColor: "#e3e2e6",
+          bodyColor: "#e3e2e6",
           padding: 12,
-          cornerRadius: 0,
+          cornerRadius: 12,
           displayColors: false,
           titleFont: {
-            family: "ChivoMono",
+            family: "Outfit",
             weight: 500,
             size: 14,
           },
           bodyFont: {
-            family: "ChivoMono",
+            family: "Outfit",
             size: 14,
           },
           callbacks: {
