@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  setup:
+  copilot-setup-steps:
     runs-on: ubuntu-latest
     permissions:
       contents: read
