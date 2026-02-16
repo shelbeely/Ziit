@@ -15,9 +15,11 @@ Skills are reusable, composable capabilities that agents can use to accomplish t
 
 Skills installed in this repository:
 
-- **vercel-labs/skills/find-skills**: Discover and search for available skills
-  - Purpose: Help agents find relevant skills for any task
-  - Usage: `npx skills find <query>`
+- **find-skills** (`vercel-labs/skills/find-skills`)
+  - Helps discover and install agent skills for any task
+  - Use when asked "how do I do X", "find a skill for X", or when looking for functionality
+  - Commands: `npx skills find [query]` to search for skills
+  - Browse all skills at: https://skills.sh/
 
 ## How to Use Skills
 
@@ -70,5 +72,6 @@ When adding a skill:
 ## Resources
 
 - [Skills.sh Documentation](https://skills.sh)
-- [Available Skills Repository](https://github.com/vercel-labs/skills)
-- [Skills CLI Usage](https://github.com/vercel-labs/skills-cli)
+- [Core Skills Repository](https://github.com/vercel-labs/skills) - Contains find-skills and core utilities
+- [Agent Skills Repository](https://github.com/vercel-labs/agent-skills) - React, Next.js, and framework-specific skills
+- [Skills CLI Documentation](https://github.com/vercel-labs/skills-cli)

@@ -20,15 +20,22 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Install skills CLI
+      - name: Verify skills CLI
         run: |
-          # Install skills non-interactively
-          npx --yes skills add vercel-labs/skills/find-skills
+          # Verify skills CLI is available and working
+          npx --yes skills --version
+          echo "Skills CLI version verified"
         env:
           CI: true
 
+      - name: Install find-skills skill
+        run: |
+          # Install the find-skills skill for agent skill discovery
+          npx skills add vercel-labs/skills --skill find-skills -y
+          echo "find-skills skill installed successfully"
+
       - name: Verify skills installation
         run: |
-          # Verify skills CLI is working
-          npx skills --version
-          echo "Skills CLI installed successfully"
+          # Verify the skill was installed
+          npx skills list
+          echo "Skills CLI installation test completed successfully"
