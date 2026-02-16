@@ -13,7 +13,8 @@
         type="submit"
         text="Save"
         :disabled="isLoading"
-        @click="$emit('save')" />
+        @click="$emit('save')"
+      />
     </div>
   </dialog>
 </template>

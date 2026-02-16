@@ -4,7 +4,8 @@
       <LeaderboardSetup
         v-if="!leaderboardFirstSet"
         :user="userState || null"
-        @updated="onLeaderboardUpdated" />
+        @updated="onLeaderboardUpdated"
+      />
 
       <div class="chart-container">
         <div class="chart" ref="chartContainer"></div>
@@ -16,7 +17,8 @@
             <h2>PROJECTS</h2>
             <p
               class="extend"
-              @click="openListModal('Projects', sortedProjects)">
+              @click="openListModal('Projects', sortedProjects)"
+            >
               <LucideMaximize :size="16" />
               DETAILS
             </p>
@@ -35,7 +37,8 @@
                       ).toFixed(1)
                     : 0
                 }%`,
-              }">
+              }"
+            >
               <div class="name">{{ project.name }}</div>
               <div class="percentage">
                 {{ ((project.seconds / stats.totalSeconds) * 100).toFixed(1) }}%
@@ -51,7 +54,8 @@
             <h2>LANGUAGES</h2>
             <p
               class="extend"
-              @click="openListModal('Languages', languageBreakdown)">
+              @click="openListModal('Languages', languageBreakdown)"
+            >
               <LucideMaximize :size="16" />
               DETAILS
             </p>
@@ -71,7 +75,8 @@
                       ).toFixed(1)
                     : 0
                 }%`,
-              }">
+              }"
+            >
               <div class="name">{{ language.name || "Unknown" }}</div>
               <div class="percentage">
                 {{
@@ -91,7 +96,8 @@
             <h2>EDITORS</h2>
             <p
               class="extend"
-              @click="openListModal('Editors', editorBreakdown)">
+              @click="openListModal('Editors', editorBreakdown)"
+            >
               <LucideMaximize :size="16" />
               DETAILS
             </p>
@@ -110,7 +116,8 @@
                       ).toFixed(1)
                     : 0
                 }%`,
-              }">
+              }"
+            >
               <div class="name">{{ editor.name || "Unknown" }}</div>
               <div class="percentage">
                 {{ ((editor.seconds / stats.totalSeconds) * 100).toFixed(1) }}%
@@ -145,7 +152,8 @@
                       ).toFixed(1)
                     : 0
                 }%`,
-              }">
+              }"
+            >
               <div class="name">{{ file.name || "Unknown" }}</div>
               <div class="percentage">
                 {{ ((file.seconds / stats.totalSeconds) * 100).toFixed(1) }}%
@@ -163,7 +171,8 @@
             <h2>OPERATING SYSTEMS</h2>
             <p
               class="extend"
-              @click="openListModal('Operating Systems', osBreakdown)">
+              @click="openListModal('Operating Systems', osBreakdown)"
+            >
               <LucideMaximize :size="16" />
               DETAILS
             </p>
@@ -179,7 +188,8 @@
                     ? ((os.seconds / osBreakdown[0]!.seconds) * 100).toFixed(1)
                     : 0
                 }%`,
-              }">
+              }"
+            >
               <div class="name">{{ os.name || "Unknown" }}</div>
               <div class="percentage">
                 {{ ((os.seconds / stats.totalSeconds) * 100).toFixed(1) }}%
@@ -197,7 +207,8 @@
             <h2>BRANCHES</h2>
             <p
               class="extend"
-              @click="openListModal('Branches', branchBreakdown)">
+              @click="openListModal('Branches', branchBreakdown)"
+            >
               <LucideMaximize :size="16" />
               DETAILS
             </p>
@@ -216,7 +227,8 @@
                       ).toFixed(1)
                     : 0
                 }%`,
-              }">
+              }"
+            >
               <div class="name">{{ branch.name || "Unknown" }}</div>
               <div class="percentage">
                 {{ ((branch.seconds / stats.totalSeconds) * 100).toFixed(1) }}%
@@ -237,7 +249,8 @@
       :items="modalItems"
       :totalSeconds="stats.totalSeconds"
       :formatTime="formatTime"
-      @close="showListModal = false" />
+      @close="showListModal = false"
+    />
   </NuxtLayout>
 </template>
 
@@ -266,7 +279,7 @@ Chart.register(
   PointElement,
   LineController,
   Tooltip,
-  Filler
+  Filler,
 );
 
 type ItemWithTime = {
@@ -287,7 +300,7 @@ if (!userState.value) {
 }
 
 const leaderboardFirstSet = computed(
-  () => userState.value?.leaderboardFirstSet ?? false
+  () => userState.value?.leaderboardFirstSet ?? false,
 );
 
 const {
@@ -338,7 +351,7 @@ watch(
       updateChart();
     }
   },
-  { immediate: true, deep: true }
+  { immediate: true, deep: true },
 );
 
 const sortedProjects = computed(() => {
@@ -348,7 +361,7 @@ const sortedProjects = computed(() => {
     ([name, seconds]) => ({
       name,
       seconds: seconds as number,
-    })
+    }),
   );
 
   if (projectSort.value === "time") {
@@ -365,7 +378,7 @@ const languageBreakdown = computed(() => {
     ([name, seconds]) => ({
       name: name || "Unknown",
       seconds: seconds as number,
-    })
+    }),
   );
 
   return languages.sort((a, b) => b.seconds - a.seconds);
@@ -378,7 +391,7 @@ const editorBreakdown = computed(() => {
     ([name, seconds]) => ({
       name: name || "Unknown",
       seconds: seconds as number,
-    })
+    }),
   );
 
   return editors.sort((a, b) => b.seconds - a.seconds);
@@ -391,7 +404,7 @@ const osBreakdown = computed(() => {
     ([name, seconds]) => ({
       name: name || "Unknown",
       seconds: seconds as number,
-    })
+    }),
   );
 
   return osArray.sort((a, b) => b.seconds - a.seconds);
@@ -404,7 +417,7 @@ const fileBreakdown = computed(() => {
     ([name, seconds]) => ({
       name: name || "Unknown",
       seconds: seconds as number,
-    })
+    }),
   );
 
   return files.sort((a, b) => b.seconds - a.seconds);
@@ -417,7 +430,7 @@ const branchBreakdown = computed(() => {
     ([name, seconds]) => ({
       name: name || "Unknown",
       seconds: seconds as number,
-    })
+    }),
   );
 
   return branches.sort((a, b) => b.seconds - a.seconds);
@@ -480,6 +493,32 @@ function renderChart() {
 
   const chartConfig = getChartConfig();
 
+  // Get MD3 colors from CSS custom properties
+  const styles = getComputedStyle(document.documentElement);
+  const primaryColor = styles.getPropertyValue("--md-sys-color-primary").trim();
+  const primaryContainer = styles
+    .getPropertyValue("--md-sys-color-primary-container")
+    .trim();
+  const onSurfaceVariant = styles
+    .getPropertyValue("--md-sys-color-on-surface-variant")
+    .trim();
+  const surfaceContainerHigh = styles
+    .getPropertyValue("--md-sys-color-surface-container-high")
+    .trim();
+  const outlineVariant = styles
+    .getPropertyValue("--md-sys-color-outline-variant")
+    .trim();
+  const onSurface = styles.getPropertyValue("--md-sys-color-on-surface").trim();
+
+  // Helper to convert hex to rgba
+  const hexToRgba = (hex: string, opacity: number): string => {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    if (result) {
+      return `rgba(${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}, ${opacity})`;
+    }
+    return hex;
+  };
+
   chart = new Chart(ctx, {
     type: "line",
     data: {
@@ -488,13 +527,16 @@ function renderChart() {
         {
           label: "Coding Time (hours)",
           data: chartConfig.data,
-          borderColor: "#ff6200",
+          borderColor: primaryColor,
           borderWidth: 3,
-          pointBackgroundColor: "#ff6200",
+          pointBackgroundColor: primaryColor,
           pointRadius: 0,
-          pointHoverRadius: 4,
+          pointHoverRadius: 6,
+          pointHoverBorderWidth: 2,
+          pointHoverBorderColor: primaryContainer,
           fill: "start",
-          tension: 0,
+          backgroundColor: hexToRgba(primaryColor, 0.1),
+          tension: 0.3,
           stepped: false,
         },
       ],
@@ -502,14 +544,17 @@ function renderChart() {
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      animation: false,
+      animation: {
+        duration: 400,
+        easing: "easeInOutCubic",
+      },
       elements: {
         line: {
-          tension: 0,
-          borderJoinStyle: "miter",
+          tension: 0.3,
+          borderJoinStyle: "round",
         },
         point: {
-          hitRadius: 10,
+          hitRadius: 12,
         },
       },
       scales: {
@@ -522,9 +567,10 @@ function renderChart() {
             autoSkip: true,
             font: {
               size: 12,
-              family: "ChivoMono",
+              family: "Outfit",
+              weight: 500,
             },
-            color: "#666666",
+            color: onSurfaceVariant,
           },
           border: {
             display: false,
@@ -536,15 +582,16 @@ function renderChart() {
             display: false,
           },
           grid: {
-            color: "rgba(255, 255, 255, 0.05)",
+            color: hexToRgba(onSurfaceVariant, 0.08),
             drawTicks: false,
           },
           ticks: {
             font: {
               size: 12,
-              family: "ChivoMono",
+              family: "Outfit",
+              weight: 500,
             },
-            color: "#666666",
+            color: onSurfaceVariant,
             padding: 8,
             callback: function (value) {
               const numValue = Number(value);
@@ -563,21 +610,22 @@ function renderChart() {
       },
       plugins: {
         tooltip: {
-          backgroundColor: "#2b2b2b",
-          borderColor: "#ffffff1a",
+          backgroundColor: surfaceContainerHigh,
+          borderColor: outlineVariant,
           borderWidth: 1,
-          titleColor: "#e6e6e6",
-          bodyColor: "#e6e6e6",
-          padding: 12,
-          cornerRadius: 0,
+          titleColor: onSurface,
+          bodyColor: onSurface,
+          padding: 16,
+          cornerRadius: 12,
           displayColors: false,
           titleFont: {
-            family: "ChivoMono",
-            weight: 500,
+            family: "Outfit",
+            weight: 600,
             size: 14,
           },
           bodyFont: {
-            family: "ChivoMono",
+            family: "Outfit",
+            weight: 500,
             size: 14,
           },
           callbacks: {
@@ -693,7 +741,7 @@ function getChartConfig() {
       const lastMonthStart = new Date(
         today.getFullYear(),
         today.getMonth() - 1,
-        1
+        1,
       );
       const lastMonthEnd = new Date(today.getFullYear(), today.getMonth(), 0);
 
@@ -731,7 +779,7 @@ function getChartConfig() {
         const monthName = months[date.getMonth()] as string;
         monthlyTotals.set(
           monthName,
-          (monthlyTotals.get(monthName) || 0) + summary.totalSeconds / 3600
+          (monthlyTotals.get(monthName) || 0) + summary.totalSeconds / 3600,
         );
       }
 
@@ -746,7 +794,7 @@ function getChartConfig() {
     case "all-time": {
       if (stats.value?.summaries?.length > 0) {
         const dates = stats.value.summaries.map(
-          (summary) => new Date(summary.date)
+          (summary) => new Date(summary.date),
         );
         const minDate = new Date(Math.min(...dates.map((d) => d.getTime())));
         const maxDate = new Date(Math.max(...dates.map((d) => d.getTime())));
@@ -756,7 +804,7 @@ function getChartConfig() {
           let currentDate = new Date(
             minDate.getFullYear(),
             minDate.getMonth(),
-            1
+            1,
           );
 
           while (currentDate <= maxDate) {

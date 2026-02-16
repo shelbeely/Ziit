@@ -24,12 +24,14 @@
             v-if="!hasGithubAccount"
             text="Link Github"
             keyName="L"
-            @click="linkGithub" />
+            @click="linkGithub"
+          />
           <UiButton
             v-if="!hasEpilogueAccount"
             text="Link Epilogue"
             keyName="M"
-            @click="linkEpilogue" />
+            @click="linkEpilogue"
+          />
           <UiButton
             :text="
               user?.leaderboardEnabled
@@ -37,15 +39,18 @@
                 : `Opt-in to Leaderboard`
             "
             keyName="O"
-            @click="toggleLeaderboard" />
+            @click="toggleLeaderboard"
+          />
           <UiButton
             text="Change Email"
             keyName="E"
-            @click="showEmailModal = true" />
+            @click="showEmailModal = true"
+          />
           <UiButton
             text="Change Password"
             keyName="P"
-            @click="showPasswordModal = true" />
+            @click="showPasswordModal = true"
+          />
           <UiButton text="Logout" keyName="Alt+L" @click="logout" />
         </div>
       </section>
@@ -56,13 +61,15 @@
         :isLoading="isLoading"
         @cancel="showEmailModal = false"
         @save="changeEmail"
-        @close="showEmailModal = false">
+        @close="showEmailModal = false"
+      >
         <template #form-content>
           <UiInput
             type="email"
             v-model="newEmail"
             placeholder="New Email Address"
-            required />
+            required
+          />
         </template>
       </UiModal>
 
@@ -74,18 +81,21 @@
         :isLoading="isLoading"
         @cancel="showPasswordModal = false"
         @save="changePassword"
-        @close="showPasswordModal = false">
+        @close="showPasswordModal = false"
+      >
         <template #form-content>
           <UiInput
             type="password"
             v-model="newPassword"
             placeholder="New Password"
-            required />
+            required
+          />
           <UiInput
             type="password"
             v-model="confirmPassword"
             placeholder="Confirm Password"
-            required />
+            required
+          />
         </template>
       </UiModal>
 
@@ -94,23 +104,27 @@
         <UiInput
           :locked="true"
           :type="showApiKey ? 'text' : 'password'"
-          :modelValue="user?.apiKey" />
+          :modelValue="user?.apiKey"
+        />
         <div class="buttons">
           <UiButton
             v-if="showApiKey"
             text="Hide API Key"
             keyName="S"
-            @click="toggleApiKey" />
+            @click="toggleApiKey"
+          />
           <UiButton
             v-else
             text="Show API Key"
             keyName="S"
-            @click="toggleApiKey" />
+            @click="toggleApiKey"
+          />
           <UiButton text="Copy API Key" keyName="c" @click="copyApiKey" />
           <UiButton
             text="Regenerate API Key"
             keyName="r"
-            @click="regenerateApiKey" />
+            @click="regenerateApiKey"
+          />
         </div>
       </section>
 
@@ -123,7 +137,8 @@
             v-model="keystrokeTimeout"
             :min="1"
             :max="60"
-            @update:modelValue="updateKeystrokeTimeout" />
+            @update:modelValue="updateKeystrokeTimeout"
+          />
 
           <p>
             In order to work correctly, summaries need to be regenerated after
@@ -132,7 +147,8 @@
           <UiButton
             text="Regenerate Summaries"
             keyName="Alt+R"
-            @click="regenerateSummaries" />
+            @click="regenerateSummaries"
+          />
         </div>
       </section>
 
@@ -144,17 +160,20 @@
               :text="'WakaTime (API Key)'"
               :selected="importType === 'wakatime-api'"
               :value="'wakatime-api'"
-              @update="(val: ImportType) => (importType = val)" />
+              @update="(val: ImportType) => (importType = val)"
+            />
             <UiRadioButton
               :text="'WakaTime (File)'"
               :selected="importType === 'wakatime-file'"
               :value="'wakatime-file'"
-              @update="(val: ImportType) => (importType = val)" />
+              @update="(val: ImportType) => (importType = val)"
+            />
             <UiRadioButton
               :text="'WakAPI'"
               :selected="importType === 'wakapi'"
               :value="'wakapi'"
-              @update="(val: ImportType) => (importType = val)" />
+              @update="(val: ImportType) => (importType = val)"
+            />
           </div>
 
           <UiInput
@@ -162,14 +181,16 @@
             type="password"
             v-model="importApiKey"
             :placeholder="apiKeyPlaceholder"
-            v-if="importType === 'wakapi' || importType === 'wakatime-api'" />
+            v-if="importType === 'wakapi' || importType === 'wakatime-api'"
+          />
 
           <UiInput
             id="wakapiInstanceUrl"
             type="text"
             v-model="wakapiInstanceUrl"
             placeholder="Enter your WakAPI instance URL (e.g. https://wakapi.dev)"
-            v-if="importType === 'wakapi'" />
+            v-if="importType === 'wakapi'"
+          />
 
           <div v-if="importType === 'wakatime-api'" class="steps">
             <p>
@@ -206,18 +227,21 @@
             ref="wakaTimeFileInput"
             accept=".json"
             @change="handleFileChange"
-            v-if="importType === 'wakatime-file'" />
+            v-if="importType === 'wakatime-file'"
+          />
         </div>
 
         <p class="setting-description">
-          For a detailed guide refer to the documentation on Wakatime/Wakapi Import
+          For a detailed guide refer to the documentation on Wakatime/Wakapi
+          Import
         </p>
 
         <UiButton
           text="Import Data"
           keyName="I"
           @click="importTrackingData"
-          :disabled="isUploading" />
+          :disabled="isUploading"
+        />
 
         <div v-if="importJob" class="import-status">
           <p>
@@ -229,7 +253,8 @@
               class="bar"
               :style="{
                 width: importJob.progress + '%',
-              }"></div>
+              }"
+            ></div>
           </div>
         </div>
       </section>
@@ -242,25 +267,29 @@
             text="Purge all data"
             keyName="Alt+C"
             @click="countDown('purge')"
-            :red="true" />
+            :red="true"
+          />
           <UiButton
             v-if="purgeTimer != 0"
             :text="`Click to confirm purge... ` + purgeTimer"
             keyName="Alt+C"
             @click="purgeData"
-            :red="true" />
+            :red="true"
+          />
           <UiButton
             v-if="deleteTimer == 0"
             text="Delete account"
             keyName="Alt+D"
             @click="countDown('delete')"
-            :red="true" />
+            :red="true"
+          />
           <UiButton
             v-if="deleteTimer != 0"
             :text="`Click to confirm delete... ` + deleteTimer"
             keyName="Alt+D"
             @click="deleteAccount"
-            :red="true" />
+            :red="true"
+          />
         </div>
       </section>
     </div>
@@ -434,7 +463,7 @@ function connectEventSource() {
         const delay = Math.min(1000 + (reconnectAttempts - 1) * 2000, 10000);
 
         console.log(
-          `Attempting to reconnect in ${delay}ms (attempt ${reconnectAttempts}/${maxReconnectAttempts})`
+          `Attempting to reconnect in ${delay}ms (attempt ${reconnectAttempts}/${maxReconnectAttempts})`,
         );
 
         reconnectTimeout = setTimeout(() => {
@@ -516,7 +545,7 @@ onMounted(() => {
           connectEventSource();
         }, 200);
       },
-      { once: true }
+      { once: true },
     );
   }
 
@@ -645,7 +674,7 @@ useKeybind({
   run: async () => {
     if (
       !confirm(
-        "Confirm that you want to regenerate all your summaires which can take a while."
+        "Confirm that you want to regenerate all your summaires which can take a while.",
       )
     ) {
       return;
@@ -765,7 +794,7 @@ async function regenerateSummaries() {
   try {
     const response = await $fetch("/api/user/regenerateSummaries");
     toast.success(
-      (response as any).message || "Summaries regenerated successfully"
+      (response as any).message || "Summaries regenerated successfully",
     );
     timeoutChanged.value = false;
     originalKeystrokeTimeout.value = keystrokeTimeout.value;
@@ -796,7 +825,7 @@ async function copyApiKey() {
 async function regenerateApiKey() {
   if (
     !confirm(
-      "Are you sure you want to regenerate your API key? Your existing VS Code extension setup will stop working until you update it."
+      "Are you sure you want to regenerate your API key? Your existing VS Code extension setup will stop working until you update it.",
     )
   ) {
     return;
@@ -852,7 +881,7 @@ async function toggleLeaderboard() {
     }
 
     toast.success(
-      `${newState ? "Opted in to" : "Opted out of"} leaderboard successfully`
+      `${newState ? "Opted in to" : "Opted out of"} leaderboard successfully`,
     );
   } catch (error: any) {
     console.error("Error updating Leaderboard opt:", error);
@@ -872,11 +901,11 @@ function handleFileChange(event: Event) {
     if (fileSize > CHUNK_SIZE) {
       const chunks = Math.ceil(fileSize / CHUNK_SIZE);
       toast.success(
-        `Large file detected (${fileSizeMB} MB). Will upload in ${chunks} chunks.`
+        `Large file detected (${fileSizeMB} MB). Will upload in ${chunks} chunks.`,
       );
     } else {
       toast.success(
-        `Selected file: ${input.files[0]!.name} (${fileSizeMB} MB)`
+        `Selected file: ${input.files[0]!.name} (${fileSizeMB} MB)`,
       );
     }
     importJob.value = null;
@@ -1007,7 +1036,7 @@ async function importTrackingData() {
             : importType.value;
       console.error(`Error importing ${displayName} data:`, error);
       toast.error(
-        error?.data?.message || `Failed to import ${displayName} data`
+        error?.data?.message || `Failed to import ${displayName} data`,
       );
     }
   }
