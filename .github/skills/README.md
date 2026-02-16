@@ -70,5 +70,5 @@ When adding a skill:
 ## Resources
 
 - [Skills.sh Documentation](https://skills.sh)
-- [Available Skills Repository](https://github.com/vercel-labs/skills)
-- [Skills CLI Usage](https://github.com/vercel-labs/skills-cli)
+- [Available Skills Repository](https://github.com/vercel-labs/agent-skills)
+- [Skills CLI Documentation](https://github.com/vercel-labs/skills-cli)
