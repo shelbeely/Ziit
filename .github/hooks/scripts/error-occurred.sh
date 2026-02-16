@@ -12,6 +12,11 @@ ERROR_MSG=$(echo "$INPUT" | jq -r '.error.message')
 ERROR_NAME=$(echo "$INPUT" | jq -r '.error.name')
 CWD=$(echo "$INPUT" | jq -r '.cwd')
 
+# Load session ID if available
+if [ -f /tmp/.ziit-session-id ]; then
+    export ZIIT_SESSION_ID=$(cat /tmp/.ziit-session-id)
+fi
+
 # Create metadata object
 METADATA=$(jq -n \
     --arg errorMessage "$ERROR_MSG" \

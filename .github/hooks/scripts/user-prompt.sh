@@ -11,6 +11,11 @@ TIMESTAMP=$(echo "$INPUT" | jq -r '.timestamp')
 PROMPT=$(echo "$INPUT" | jq -r '.prompt')
 CWD=$(echo "$INPUT" | jq -r '.cwd')
 
+# Load session ID if available
+if [ -f /tmp/.ziit-session-id ]; then
+    export ZIIT_SESSION_ID=$(cat /tmp/.ziit-session-id)
+fi
+
 # Create metadata object (truncate prompt if too long)
 PROMPT_PREVIEW=$(echo "$PROMPT" | head -c 500)
 METADATA=$(jq -n \

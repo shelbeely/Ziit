@@ -1,0 +1,21 @@
+# Example .envrc or .bashrc configuration for Ziit-Agent
+
+# Basic configuration
+export ZIIT_API_URL="https://ziit.app"  # or your self-hosted instance
+export ZIIT_API_KEY="your-api-key-here"
+
+# Optional: Set a custom session ID prefix (useful for tracking different environments)
+# export ZIIT_SESSION_PREFIX="dev"
+
+# Advanced: Per-project configuration
+# You can use direnv (https://direnv.net/) to set project-specific variables
+#
+# Example .envrc in your project directory:
+# export ZIIT_API_URL="https://ziit.company.com"
+# export ZIIT_API_KEY="project-specific-key"
+
+# Tips:
+# 1. Use direnv to automatically load environment variables per project
+# 2. Add .envrc to your global .gitignore to protect API keys
+# 3. Use different API keys for work vs personal projects
+# 4. Self-hosted instances can have project-specific URLs
