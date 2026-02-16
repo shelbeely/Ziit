@@ -510,6 +510,15 @@ function renderChart() {
     .trim();
   const onSurface = styles.getPropertyValue("--md-sys-color-on-surface").trim();
 
+  // Helper to convert hex to rgba
+  const hexToRgba = (hex: string, opacity: number): string => {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    if (result) {
+      return `rgba(${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}, ${opacity})`;
+    }
+    return hex;
+  };
+
   chart = new Chart(ctx, {
     type: "line",
     data: {
@@ -526,7 +535,7 @@ function renderChart() {
           pointHoverBorderWidth: 2,
           pointHoverBorderColor: primaryContainer,
           fill: "start",
-          backgroundColor: `${primaryColor}1a`, // 10% opacity
+          backgroundColor: hexToRgba(primaryColor, 0.1),
           tension: 0.3,
           stepped: false,
         },
@@ -573,7 +582,7 @@ function renderChart() {
             display: false,
           },
           grid: {
-            color: `${onSurfaceVariant}14`, // 8% opacity
+            color: hexToRgba(onSurfaceVariant, 0.08),
             drawTicks: false,
           },
           ticks: {
