@@ -35,22 +35,36 @@ const { data: user } = await useFetch("/api/user");
   .title {
     display: flex;
     align-items: center;
+    
+    svg path {
+      fill: var(--md-sys-color-on-surface);
+    }
   }
 
   .actions {
     display: flex;
-    gap: 24px;
+    gap: 8px;
 
     a {
-      color: var(--text-secondary);
+      color: var(--md-sys-color-on-surface-variant);
+      padding: 8px 16px;
+      border-radius: var(--md-sys-shape-corner-small);
+      transition: background-color 0.2s ease, color 0.2s ease;
+      font-weight: 500;
 
       &:hover {
-        color: var(--text);
+        color: var(--md-sys-color-on-surface);
+        background-color: var(--md-sys-color-surface-container);
       }
     }
 
     .router-link-active {
-      color: var(--text);
+      color: var(--md-sys-color-primary);
+      background-color: var(--md-sys-color-primary-container);
+      
+      &:hover {
+        background-color: var(--md-sys-color-primary-container);
+      }
     }
   }
 }
