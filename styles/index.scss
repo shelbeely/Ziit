@@ -1,12 +1,47 @@
+/* Material Design 3 Typography Tokens */
+:root {
+  /* Display */
+  --md-sys-typescale-display-large-font: 400 57px/64px Outfit;
+  --md-sys-typescale-display-medium-font: 400 45px/52px Outfit;
+  --md-sys-typescale-display-small-font: 400 36px/44px Outfit;
+  
+  /* Headline */
+  --md-sys-typescale-headline-large-font: 400 32px/40px Outfit;
+  --md-sys-typescale-headline-medium-font: 400 28px/36px Outfit;
+  --md-sys-typescale-headline-small-font: 400 24px/32px Outfit;
+  
+  /* Title */
+  --md-sys-typescale-title-large-font: 500 22px/28px Outfit;
+  --md-sys-typescale-title-medium-font: 600 16px/24px Outfit;
+  --md-sys-typescale-title-small-font: 600 14px/20px Outfit;
+  
+  /* Body */
+  --md-sys-typescale-body-large-font: 400 16px/24px Outfit;
+  --md-sys-typescale-body-medium-font: 400 14px/20px Outfit;
+  --md-sys-typescale-body-small-font: 400 12px/16px Outfit;
+  
+  /* Label */
+  --md-sys-typescale-label-large-font: 600 14px/20px Outfit;
+  --md-sys-typescale-label-medium-font: 600 12px/16px Outfit;
+  --md-sys-typescale-label-small-font: 600 11px/16px Outfit;
+}
+
 .stats-dashboard {
   display: flex;
   flex-direction: column;
   gap: 24px;
 
   .chart-container {
-    padding: 16px;
-    border: 1px solid var(--border);
+    padding: 24px;
+    background-color: var(--md-sys-color-surface-container);
+    border-radius: var(--md-sys-shape-corner-large);
+    box-shadow: var(--md-sys-elevation-level2);
     height: 350px;
+    transition: box-shadow 200ms cubic-bezier(0.2, 0, 0, 1);
+
+    &:hover {
+      box-shadow: var(--md-sys-elevation-level3);
+    }
 
     .chart {
       height: 100%;
@@ -23,10 +58,10 @@
     }
 
     .section {
-      padding: 0;
-      background-color: transparent;
-      border: none;
-      gap: 8px;
+      padding: 16px;
+      background-color: var(--md-sys-color-surface-container-low);
+      border-radius: var(--md-sys-shape-corner-medium);
+      gap: 12px;
       display: flex;
       flex-direction: column;
       overflow: hidden;
@@ -34,22 +69,29 @@
       .text {
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         h2 {
-          font-size: 14px;
-          color: var(--text-secondary);
-          font-weight: 600;
+          font: var(--md-sys-typescale-title-small-font);
+          color: var(--md-sys-color-on-surface-variant);
           text-transform: uppercase;
+          letter-spacing: 0.5px;
         }
 
         .extend {
-          color: var(--text);
+          font: var(--md-sys-typescale-label-medium-font);
+          color: var(--md-sys-color-primary);
           display: flex;
-          gap: 8px;
+          gap: 6px;
           align-items: center;
+          transition: all 150ms cubic-bezier(0.2, 0, 0, 1);
+          padding: 8px 12px;
+          border-radius: var(--md-sys-shape-corner-small);
+          min-height: 44px;
 
           &:hover {
-            color: var(--accent);
+            background-color: var(--md-sys-color-primary-container);
+            color: var(--md-sys-color-on-primary-container);
             cursor: pointer;
           }
         }
@@ -67,10 +109,12 @@
       grid-template-columns: 1fr auto auto;
       gap: 1rem;
       align-items: center;
-      padding: 8px 10px;
+      padding: 12px;
       position: relative;
       overflow: hidden;
-      height: 34px;
+      min-height: 44px;
+      border-radius: var(--md-sys-shape-corner-small);
+      transition: background-color 150ms cubic-bezier(0.2, 0, 0, 1);
 
       &::before {
         content: "";
@@ -79,8 +123,14 @@
         left: 0;
         height: 100%;
         width: var(--percentage);
-        background: var(--element);
+        background: var(--md-sys-color-surface-container-high);
         z-index: 0;
+        border-radius: var(--md-sys-shape-corner-small);
+        transition: width 300ms cubic-bezier(0.2, 0, 0, 1);
+      }
+
+      &:hover {
+        background-color: var(--md-sys-color-surface-container-highest);
       }
 
       &:last-child {
@@ -88,8 +138,8 @@
       }
 
       .name {
-        font-weight: 500;
-        color: var(--text);
+        font: var(--md-sys-typescale-body-medium-font);
+        color: var(--md-sys-color-on-surface);
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -99,8 +149,8 @@
 
       .time {
         text-align: right;
-        color: var(--text);
-        font-weight: 500;
+        font: var(--md-sys-typescale-label-large-font);
+        color: var(--md-sys-color-on-surface);
         white-space: nowrap;
         position: relative;
         z-index: 1;
@@ -109,8 +159,8 @@
 
       .percentage {
         text-align: right;
-        color: var(--text-secondary);
-        font-weight: 600;
+        font: var(--md-sys-typescale-label-medium-font);
+        color: var(--md-sys-color-on-surface-variant);
         white-space: nowrap;
         position: relative;
         z-index: 1;
@@ -119,7 +169,8 @@
   }
 
   .no-data {
-    color: var(--text-secondary);
+    font: var(--md-sys-typescale-body-medium-font);
+    color: var(--md-sys-color-on-surface-variant);
     padding: 16px;
     padding-left: 0;
     font-style: italic;
