@@ -210,8 +210,7 @@
         </div>
 
         <p class="setting-description">
-          For a detailed guide refer to
-          <a href="https://docs.ziit.app/data-import">Wakatime/Wakapi Import</a>
+          For a detailed guide refer to the documentation on Wakatime/Wakapi Import
         </p>
 
         <UiButton
@@ -1066,12 +1065,11 @@ useSeoMeta({
   description: "Manage your Ziit account settings and API keys",
   ogTitle: "Settings - Ziit",
   ogDescription: "Manage your Ziit account settings and API keys",
-  ogImage: "https://ziit.app/logo.webp",
-  ogUrl: "https://ziit.app/settings",
+  ogImage: "/logo.webp",
   ogSiteName: "Ziit",
   twitterTitle: "Settings - Ziit",
   twitterDescription: "Manage your Ziit account settings and API keys",
-  twitterImage: "https://ziit.app/logo.webp",
+  twitterImage: "/logo.webp",
   twitterCard: "summary",
   twitterCreator: "@pandadev_",
   twitterSite: "@pandadev_",
@@ -1082,24 +1080,9 @@ useHead({
   htmlAttrs: { lang: "en" },
   link: [
     {
-      rel: "canonical",
-      href: "https://ziit.app/settings",
-    },
-    {
       rel: "icon",
       type: "image/ico",
       href: "/favicon.ico",
-    },
-  ],
-  script: [
-    {
-      type: "application/ld+json",
-      innerHTML: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        name: "Settings - Ziit",
-        url: "https://ziit.app/settings",
-      }),
     },
   ],
 });

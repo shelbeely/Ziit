@@ -14,11 +14,7 @@
 </h3>
 
 <div align="center">
-    <a href="https://docs.ziit.app">Docs</a>
-    <span>  •  </span>
-    <a href="https://ziit.app/stats">Stats</a>
-    <span>  •  </span>
-    <a href="https://ziit.app/leaderboard">Leaderboard</a>
+    <a href="https://github.com/shelbeely/Ziit-Agent">Docs</a>
     <span>  •  </span>
     <a href="https://discord.gg/Y7SbYphVw9">Discord</a>
     <span>  •  </span>
@@ -27,8 +23,7 @@
 
 <br>
 
-[![Better Stack Badge](https://uptime.betterstack.com/status-badges/v3/monitor/1ym1e.svg)](https://status.ziit.app)
- ![ziit](https://ziit.app/api/public/badge/cm98il90n0000o52c3my0bf5p/ziit)
+[![Better Stack Badge](https://uptime.betterstack.com/status-badges/v3/monitor/1ym1e.svg)](https://uptime.betterstack.com)
 
 
 > [!IMPORTANT]
@@ -80,14 +75,14 @@ Ziit-Agent is perfect for developers who want to understand how they work with A
 
 ## How to use Ziit-Agent
 
-First [setup an instance](https://docs.ziit.app/deploy) or sign up on the public one <https://ziit.app> then install the extension by searching for "Ziit" in your favorite IDE.
+First [setup an instance](https://github.com/shelbeely/Ziit-Agent#deployment) or use your own self-hosted instance then install the extension by searching for "Ziit" in your favorite IDE.
 
 Supported IDE's:
 
-- [VS Code (Including all forks)](https://docs.ziit.app/extensions/vscode)
+- [VS Code (Including all forks)](https://github.com/0PandaDEV/ziit-vscode)
 - [JetBrains](https://plugins.jetbrains.com/plugin/27391-ziit)
 
-For more details on how to setup the IDE extensions checkout the [docs](https://docs.ziit.app/extensions).
+For more details on how to setup the IDE extensions checkout the documentation.
 
 ### GitHub Copilot Coding Agent Integration
 

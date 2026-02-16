@@ -169,7 +169,7 @@ export default defineEventHandler(async (event) => {
 
       if (!user) {
         const userEmail =
-          epilogueUser.email || `epilogue_${epilogueUser.id}@temp.ziit.app`;
+          epilogueUser.email || `epilogue_${epilogueUser.id}@temp.local`;
         const username =
           epilogueUser.username || `epilogue_user_${epilogueUser.id}`;
 

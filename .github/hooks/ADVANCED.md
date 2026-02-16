@@ -89,7 +89,7 @@ This enables:
 ### Required
 
 - `ZIIT_API_KEY`: Your Ziit API key (required)
-- `ZIIT_API_URL`: Ziit instance URL (default: https://ziit.app)
+- `ZIIT_API_URL`: Ziit instance URL (default: http://localhost:3000)
 
 ### Optional
 

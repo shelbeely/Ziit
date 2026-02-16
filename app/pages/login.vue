@@ -150,12 +150,11 @@ useSeoMeta({
   description: "Track your coding time and productivity with Ziit",
   ogTitle: "Ziit - Coding Statistics",
   ogDescription: "Track your coding time and productivity with Ziit",
-  ogImage: "https://ziit.app/logo.webp",
-  ogUrl: "https://ziit.app/login",
+  ogImage: "/logo.webp",
   ogSiteName: "Ziit",
   twitterTitle: "Ziit - Coding Statistics",
   twitterDescription: "Track your coding time and productivity with Ziit",
-  twitterImage: "https://ziit.app/logo.webp",
+  twitterImage: "/logo.webp",
   twitterCard: "summary",
   twitterCreator: "@pandadev_",
   twitterSite: "@pandadev_",
@@ -166,24 +165,9 @@ useHead({
   htmlAttrs: { lang: "en" },
   link: [
     {
-      rel: "canonical",
-      href: "https://ziit.app/login",
-    },
-    {
       rel: "icon",
       type: "image/ico",
       href: "/favicon.ico",
-    },
-  ],
-  script: [
-    {
-      type: "application/ld+json",
-      innerHTML: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        name: "Login - Ziit",
-        url: "https://ziit.app/login",
-      }),
     },
   ],
 });

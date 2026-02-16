@@ -173,7 +173,7 @@ Error monitoring:
 export ZIIT_API_KEY="your-api-key-here"
 
 # Optional
-export ZIIT_API_URL="https://ziit.app"  # default
+export ZIIT_API_URL="http://localhost:3000"  # default
 export ZIIT_SESSION_ID="custom-session-id"  # override auto-generation
 ```
 
@@ -230,15 +230,15 @@ export ZIIT_API_KEY="your-key"
 ```bash
 # Get overview
 curl -H "Authorization: Bearer TOKEN" \
-  "https://ziit.app/api/copilot/overview?days=7"
+  "http://localhost:3000/api/copilot/overview?days=7"
 
 # Get session details
 curl -H "Authorization: Bearer TOKEN" \
-  "https://ziit.app/api/copilot/session?sessionId=session-123"
+  "http://localhost:3000/api/copilot/session?sessionId=session-123"
 
 # Track tool usage
 curl -H "Authorization: Bearer TOKEN" \
-  "https://ziit.app/api/copilot/tool-usage?days=30"
+  "http://localhost:3000/api/copilot/tool-usage?days=30"
 ```
 
 ### Build a Dashboard

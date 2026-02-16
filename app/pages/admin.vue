@@ -275,13 +275,12 @@ useSeoMeta({
   description: "A list of all users on this instance with their information.",
   ogTitle: "Ziit - Admin",
   ogDescription: "A list of all users on this instance with their information.",
-  ogImage: "https://ziit.app/logo.webp",
-  ogUrl: "https://ziit.app/admin",
+  ogImage: "/logo.webp",
   ogSiteName: "Ziit",
   twitterTitle: "Ziit - Admin",
   twitterDescription:
     "A list of all users on this instance with their information.",
-  twitterImage: "https://ziit.app/logo.webp",
+  twitterImage: "/logo.webp",
   twitterCard: "summary",
   twitterCreator: "@pandadev_",
   twitterSite: "@pandadev_",
@@ -292,26 +291,9 @@ useHead({
   htmlAttrs: { lang: "en" },
   link: [
     {
-      rel: "canonical",
-      href: "https://ziit.app/admin",
-    },
-    {
       rel: "icon",
       type: "image/ico",
       href: "/favicon.ico",
-    },
-  ],
-  script: [
-    {
-      type: "application/ld+json",
-      innerHTML: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        name: "Ziit - Admin",
-        url: "https://ziit.app/admin",
-        description:
-          "A list of all users on this instance with their information.",
-      }),
     },
   ],
 });

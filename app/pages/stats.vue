@@ -57,12 +57,11 @@ useSeoMeta({
   description: "View instance statistics on Ziit.",
   ogTitle: "Ziit - Instance Statistics",
   ogDescription: "View instance statistics on Ziit.",
-  ogImage: "https://ziit.app/logo.webp",
-  ogUrl: "https://ziit.app/stats",
+  ogImage: "/logo.webp",
   ogSiteName: "Ziit",
   twitterTitle: "Ziit - Instance Statistics",
   twitterDescription: "View instance statistics on Ziit.",
-  twitterImage: "https://ziit.app/logo.webp",
+  twitterImage: "/logo.webp",
   twitterCard: "summary",
   twitterCreator: "@pandadev_",
   twitterSite: "@pandadev_",
@@ -73,25 +72,9 @@ useHead({
   htmlAttrs: { lang: "en" },
   link: [
     {
-      rel: "canonical",
-      href: "https://ziit.app/stats",
-    },
-    {
       rel: "icon",
       type: "image/ico",
       href: "/favicon.ico",
-    },
-  ],
-  script: [
-    {
-      type: "application/ld+json",
-      innerHTML: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        name: "Ziit - Instance Statistics",
-        url: "https://ziit.app/stats",
-        description: "View instance statistics on Ziit.",
-      }),
     },
   ],
 });

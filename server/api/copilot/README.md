@@ -329,28 +329,28 @@ Track errors that occurred during Copilot sessions.
 
 ```bash
 curl -H "Authorization: Bearer YOUR_TOKEN" \
-  "https://ziit.app/api/copilot/overview?days=7"
+  "http://localhost:3000/api/copilot/overview?days=7"
 ```
 
 ### Get Session Details
 
 ```bash
 curl -H "Authorization: Bearer YOUR_TOKEN" \
-  "https://ziit.app/api/copilot/session?sessionId=session-1704614400-12345"
+  "http://localhost:3000/api/copilot/session?sessionId=session-1704614400-12345"
 ```
 
 ### Track Tool Usage for Specific Session
 
 ```bash
 curl -H "Authorization: Bearer YOUR_TOKEN" \
-  "https://ziit.app/api/copilot/tool-usage?sessionId=session-1704614400-12345"
+  "http://localhost:3000/api/copilot/tool-usage?sessionId=session-1704614400-12345"
 ```
 
 ### Get Daily Activity Timeline
 
 ```bash
 curl -H "Authorization: Bearer YOUR_TOKEN" \
-  "https://ziit.app/api/copilot/activity-timeline?days=30&groupBy=day"
+  "http://localhost:3000/api/copilot/activity-timeline?days=30&groupBy=day"
 ```
 
 ## Integration Tips

@@ -15,7 +15,7 @@ The hooks system allows Ziit to receive heartbeats from GitHub Copilot Coding Ag
 
 ### Prerequisites
 
-1. A Ziit instance (self-hosted or https://ziit.app)
+1. A Ziit instance (self-hosted)
 2. A Ziit API key (found in your Ziit account settings)
 3. GitHub Copilot Coding Agent enabled in your repository
 
@@ -27,13 +27,13 @@ The hooks system allows Ziit to receive heartbeats from GitHub Copilot Coding Ag
 
    ```bash
    # For bash/zsh
-   export ZIIT_API_URL="https://ziit.app"  # or your self-hosted instance URL
+   export ZIIT_API_URL="http://localhost:3000"  # or your self-hosted instance URL
    export ZIIT_API_KEY="your-api-key-here"
    ```
 
    ```powershell
    # For PowerShell
-   $env:ZIIT_API_URL = "https://ziit.app"
+   $env:ZIIT_API_URL = "http://localhost:3000"
    $env:ZIIT_API_KEY = "your-api-key-here"
    ```
 
@@ -230,7 +230,7 @@ fi
 
 - [GitHub Copilot Hooks Documentation](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/use-hooks)
 - [Hooks Configuration Reference](https://docs.github.com/en/copilot/reference/hooks-configuration)
-- [Ziit Documentation](https://docs.ziit.app)
+- [Ziit-Agent Documentation](https://github.com/shelbeely/Ziit-Agent)
 
 ## Support
 
