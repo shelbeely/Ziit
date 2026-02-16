@@ -62,7 +62,7 @@ const formattedTime = computed(() => {
   left: 0;
   background: linear-gradient(
     to bottom,
-    var(--background) 20%,
+    var(--md-sys-color-background) 20%,
     transparent 100%
   );
   z-index: 5;
@@ -75,7 +75,7 @@ const formattedTime = computed(() => {
   height: 24px;
   left: 0;
   width: calc(100vw - 24px);
-  background: linear-gradient(to top, var(--background) 20%, transparent 100%);
+  background: linear-gradient(to top, var(--md-sys-color-background) 20%, transparent 100%);
   z-index: 5;
   pointer-events: none;
 
@@ -91,6 +91,6 @@ const formattedTime = computed(() => {
   z-index: 10;
   height: 18px;
   overflow: visible;
-  color: var(--text-secondary);
+  color: var(--md-sys-color-on-surface-variant);
 }
 </style>

@@ -488,13 +488,16 @@ function renderChart() {
         {
           label: "Coding Time (hours)",
           data: chartConfig.data,
-          borderColor: "#ff6200",
+          borderColor: "#ffb68c",
           borderWidth: 3,
-          pointBackgroundColor: "#ff6200",
+          pointBackgroundColor: "#ffb68c",
           pointRadius: 0,
-          pointHoverRadius: 4,
+          pointHoverRadius: 6,
+          pointHoverBorderWidth: 2,
+          pointHoverBorderColor: "#703900",
           fill: "start",
-          tension: 0,
+          backgroundColor: "rgba(255, 182, 140, 0.1)",
+          tension: 0.3,
           stepped: false,
         },
       ],
@@ -502,14 +505,17 @@ function renderChart() {
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      animation: false,
+      animation: {
+        duration: 400,
+        easing: "easeInOutCubic",
+      },
       elements: {
         line: {
-          tension: 0,
-          borderJoinStyle: "miter",
+          tension: 0.3,
+          borderJoinStyle: "round",
         },
         point: {
-          hitRadius: 10,
+          hitRadius: 12,
         },
       },
       scales: {
@@ -522,9 +528,10 @@ function renderChart() {
             autoSkip: true,
             font: {
               size: 12,
-              family: "ChivoMono",
+              family: "Outfit",
+              weight: 500,
             },
-            color: "#666666",
+            color: "#ccc4cf",
           },
           border: {
             display: false,
@@ -536,15 +543,16 @@ function renderChart() {
             display: false,
           },
           grid: {
-            color: "rgba(255, 255, 255, 0.05)",
+            color: "rgba(204, 196, 207, 0.08)",
             drawTicks: false,
           },
           ticks: {
             font: {
               size: 12,
-              family: "ChivoMono",
+              family: "Outfit",
+              weight: 500,
             },
-            color: "#666666",
+            color: "#ccc4cf",
             padding: 8,
             callback: function (value) {
               const numValue = Number(value);
@@ -563,21 +571,22 @@ function renderChart() {
       },
       plugins: {
         tooltip: {
-          backgroundColor: "#2b2b2b",
-          borderColor: "#ffffff1a",
+          backgroundColor: "#2b292d",
+          borderColor: "#49454e",
           borderWidth: 1,
-          titleColor: "#e6e6e6",
-          bodyColor: "#e6e6e6",
-          padding: 12,
-          cornerRadius: 0,
+          titleColor: "#e6e1e6",
+          bodyColor: "#e6e1e6",
+          padding: 16,
+          cornerRadius: 12,
           displayColors: false,
           titleFont: {
-            family: "ChivoMono",
-            weight: 500,
+            family: "Outfit",
+            weight: 600,
             size: 14,
           },
           bodyFont: {
-            family: "ChivoMono",
+            family: "Outfit",
+            weight: 500,
             size: 14,
           },
           callbacks: {
