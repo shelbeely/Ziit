@@ -23,3 +23,6 @@ logs
 .env.*
 !.env.example
 prisma/generated
+
+# Agent skills (installed locally)
+.agents/skills/

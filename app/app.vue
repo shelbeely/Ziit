@@ -17,7 +17,7 @@ useKeybind({
 </script>
 
 <style lang="scss">
-@import '~~/styles/material-design-3-tokens.scss';
+@use '~~/styles/material-design-3-tokens.scss';
 
 // Keep legacy variables for backward compatibility
 :root {
