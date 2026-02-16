@@ -13,8 +13,9 @@ This repository uses [skills.sh](https://skills.sh) for reusable agent capabilit
 2. **Search before implementing**
    - Before implementing new features, always search for relevant skills:
      ```bash
-     npx skills find <feature-name>
+     npx skills find <query>
      ```
+     Example: `npx skills find testing` or `npx skills find linting`
    - Check `.github/skills/` directory for already installed skills
 
 3. **Prefer skills over custom implementations**

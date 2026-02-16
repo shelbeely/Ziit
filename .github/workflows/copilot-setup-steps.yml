@@ -24,3 +24,9 @@ jobs:
           npx --yes skills add vercel-labs/skills/find-skills
         env:
           CI: true
+
+      - name: Verify skills installation
+        run: |
+          # Verify skills CLI is working
+          npx skills --version
+          echo "Skills CLI installed successfully"
