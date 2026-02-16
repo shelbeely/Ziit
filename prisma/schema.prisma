@@ -43,6 +43,10 @@ model Heartbeats {
   os          String?
   file        String?
   branch      String?
+  category    String?  @default("coding")
+  eventType   String?
+  toolName    String?
+  metadata    Json?
   createdAt   DateTime @default(now()) @db.Timestamptz
   summariesId String?
 
@@ -56,6 +60,9 @@ model Heartbeats {
   @@index([branch])
   @@index([file])
   @@index([summariesId])
+  @@index([category])
+  @@index([eventType])
+  @@index([toolName])
 }
 
 model Summaries {

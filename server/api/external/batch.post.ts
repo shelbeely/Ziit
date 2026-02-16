@@ -30,6 +30,10 @@ defineRouteMeta({
                 os: { type: "string" },
                 branch: { type: "string" },
                 file: { type: "string" },
+                category: { type: "string", description: "Category of heartbeat (e.g., coding, copilot-agent)" },
+                eventType: { type: "string", description: "Hook event type (e.g., sessionStart, preToolUse)" },
+                toolName: { type: "string", description: "Tool name for tool-related events" },
+                metadata: { type: "object", description: "Additional metadata as JSON" },
               },
               required: [
                 "timestamp",
@@ -77,6 +81,10 @@ const heartbeatSchema = z.object({
   os: z.string().min(1).max(50),
   branch: z.string().max(255).optional(),
   file: z.string().max(255),
+  category: z.string().max(50).optional(),
+  eventType: z.string().max(100).optional(),
+  toolName: z.string().max(50).optional(),
+  metadata: z.record(z.unknown()).optional(),
 });
 
 const batchSchema = z.array(heartbeatSchema).min(1).max(100000);
@@ -131,6 +139,10 @@ export default defineEventHandler(async (event: H3Event) => {
         os: heartbeat.os,
         branch: heartbeat.branch,
         file: heartbeat.file,
+        category: heartbeat.category,
+        eventType: heartbeat.eventType,
+        toolName: heartbeat.toolName,
+        metadata: heartbeat.metadata,
       };
     });
 
