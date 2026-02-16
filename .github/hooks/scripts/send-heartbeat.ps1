@@ -1,7 +1,7 @@
 # send-heartbeat.ps1 - Helper script to send heartbeat to Ziit API
 
 # Read configuration from environment or use defaults
-$ZiitApiUrl = if ($env:ZIIT_API_URL) { $env:ZIIT_API_URL } else { "https://ziit.app" }
+$ZiitApiUrl = if ($env:ZIIT_API_URL) { $env:ZIIT_API_URL } else { "http://localhost:3000" }
 $ZiitApiKey = if ($env:ZIIT_API_KEY) { $env:ZIIT_API_KEY } else { "" }
 
 function Send-Heartbeat {

@@ -113,7 +113,7 @@ This implementation transforms Ziit into Ziit-Agent, adding comprehensive GitHub
 ### Setup
 ```bash
 # Set environment variables
-export ZIIT_API_URL="https://ziit.app"
+export ZIIT_API_URL="http://localhost:3000"
 export ZIIT_API_KEY="your-api-key-here"
 
 # Hooks activate automatically when using GitHub Copilot Coding Agent

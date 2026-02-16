@@ -1,7 +1,7 @@
 # Example .envrc or .bashrc configuration for Ziit-Agent
 
 # Basic configuration
-export ZIIT_API_URL="https://ziit.app"  # or your self-hosted instance
+export ZIIT_API_URL="http://localhost:3000"  # or your self-hosted instance
 export ZIIT_API_KEY="your-api-key-here"
 
 # Optional: Set a custom session ID prefix (useful for tracking different environments)

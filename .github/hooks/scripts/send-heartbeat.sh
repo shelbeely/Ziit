@@ -4,7 +4,7 @@
 set -euo pipefail
 
 # Read configuration from environment or use defaults
-ZIIT_API_URL="${ZIIT_API_URL:-https://ziit.app}"
+ZIIT_API_URL="${ZIIT_API_URL:-http://localhost:3000}"
 ZIIT_API_KEY="${ZIIT_API_KEY:-}"
 ZIIT_SESSION_ID="${ZIIT_SESSION_ID:-}"
 

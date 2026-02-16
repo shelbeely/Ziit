@@ -6,13 +6,13 @@ info:
     The API allows you to submit coding activity heartbeats, retrieve statistics, and access user information.
   version: 1.0.0
   contact:
-    email: support@ziit.app
+    email: support@example.com
   license:
     name: GNU Affero General Public License v3.0
     url: https://www.gnu.org/licenses/agpl-3.0.en.html
 servers:
-  - url: https://ziit.app
-    description: Production Server
+  - url: http://localhost:3000
+    description: Local Development Server
 tags:
   - name: API Routes
     description: External API endpoints for tracking coding activity
