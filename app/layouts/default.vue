@@ -7,7 +7,8 @@
     </div>
     <div
       class="fade-bottom"
-      :class="{ 'home-page': $route.path === '/' }"></div>
+      :class="{ 'home-page': $route.path === '/' }"
+    ></div>
     <div class="bottombar" v-if="$route.path === '/'">
       <p class="coding-time">{{ formattedTime }}</p>
       <UiSelect v-model="selectedTimeRange" :items="timeRangeOptions" />
@@ -75,7 +76,11 @@ const formattedTime = computed(() => {
   height: 24px;
   left: 0;
   width: calc(100vw - 24px);
-  background: linear-gradient(to top, var(--md-sys-color-background) 20%, transparent 100%);
+  background: linear-gradient(
+    to top,
+    var(--md-sys-color-background) 20%,
+    transparent 100%
+  );
   z-index: 5;
   pointer-events: none;
 

@@ -5,7 +5,9 @@
       :type="type"
       :placeholder="placeholder"
       :value="modelValue"
-      @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
+      @input="
+        $emit('update:modelValue', ($event.target as HTMLInputElement).value)
+      "
       @focus="$emit('focus')"
       @blur="$emit('blur')"
       :readonly="locked"

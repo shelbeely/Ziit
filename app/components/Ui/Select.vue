@@ -3,14 +3,16 @@
     class="select-container"
     @click="toggleDropdown"
     @blur="closeDropdown"
-    tabindex="0">
+    tabindex="0"
+  >
     <div class="dropdown-menu" v-show="isOpen">
       <div
         v-for="(item, index) in items"
         :key="index"
         class="dropdown-item"
         :class="{ selected: selectedItem && selectedItem.value === item.value }"
-        @click.stop="selectItem(item)">
+        @click.stop="selectItem(item)"
+      >
         {{ item.label }}
         <div class="key-container" v-if="item.key">
           <template v-if="item.key.includes('+')">

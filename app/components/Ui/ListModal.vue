@@ -17,7 +17,8 @@
               ? ((item.seconds / sortedItems[0].seconds) * 100).toFixed(1)
               : 0
           }%`,
-        }">
+        }"
+      >
         <div class="name">{{ item.name || "Unknown" }}</div>
         <div class="percentage">{{ calculatePercentage(item.seconds) }}%</div>
         <div class="time">{{ formatTime(item.seconds) }}</div>
@@ -78,7 +79,7 @@ watch(
     if (!newOpen && listContentRef.value) {
       listContentRef.value.scrollTop = 0;
     }
-  }
+  },
 );
 </script>
 
@@ -137,7 +138,9 @@ watch(
       align-items: center;
       justify-content: center;
       border-radius: var(--md-sys-shape-corner-small);
-      transition: background-color 0.2s ease, color 0.2s ease;
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
 
       &:hover {
         color: var(--md-sys-color-on-surface);

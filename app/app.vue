@@ -29,19 +29,19 @@ useKeybind({
   --md-sys-color-surface-container: #201f23;
   --md-sys-color-surface-container-high: #2b292d;
   --md-sys-color-surface-container-highest: #363438;
-  
+
   /* Primary Colors - Orange accent */
   --md-sys-color-primary: #ffb68c;
   --md-sys-color-on-primary: #4f2600;
   --md-sys-color-primary-container: #703900;
   --md-sys-color-on-primary-container: #ffdcc5;
-  
+
   /* Text Colors */
   --md-sys-color-on-surface: #e6e1e6;
   --md-sys-color-on-surface-variant: #ccc4cf;
   --md-sys-color-outline: #958e99;
   --md-sys-color-outline-variant: #49454e;
-  
+
   /* Legacy compatibility */
   --background: var(--md-sys-color-background);
   --element: var(--md-sys-color-surface-container);
@@ -50,12 +50,15 @@ useKeybind({
   --text: var(--md-sys-color-on-surface);
   --text-secondary: var(--md-sys-color-on-surface-variant);
   --text-muted: var(--md-sys-color-outline);
-  
+
   /* MD3 Elevation Shadows */
-  --md-sys-elevation-1: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-  --md-sys-elevation-2: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
-  --md-sys-elevation-3: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
-  
+  --md-sys-elevation-1:
+    0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --md-sys-elevation-2:
+    0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+  --md-sys-elevation-3:
+    0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+
   /* MD3 Shape - Rounded corners */
   --md-sys-shape-corner-none: 0px;
   --md-sys-shape-corner-extra-small: 4px;

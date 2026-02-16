@@ -9,7 +9,9 @@
     border-radius: var(--md-sys-shape-corner-large);
     box-shadow: var(--md-sys-elevation-1);
     height: 350px;
-    transition: box-shadow 0.2s ease, background-color 0.2s ease;
+    transition:
+      box-shadow 0.2s ease,
+      background-color 0.2s ease;
 
     &:hover {
       box-shadow: var(--md-sys-elevation-2);
@@ -39,7 +41,9 @@
       display: flex;
       flex-direction: column;
       overflow: hidden;
-      transition: box-shadow 0.2s ease, background-color 0.2s ease;
+      transition:
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
 
       &:hover {
         box-shadow: var(--md-sys-elevation-2);
@@ -66,7 +70,9 @@
           align-items: center;
           padding: 8px 12px;
           border-radius: var(--md-sys-shape-corner-small);
-          transition: background-color 0.2s ease, color 0.2s ease;
+          transition:
+            background-color 0.2s ease,
+            color 0.2s ease;
           font-size: 12px;
           font-weight: 500;
 

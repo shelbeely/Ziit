@@ -7,28 +7,32 @@
 
           <td
             :class="getHeaderClass('totalMinutes')"
-            @click="setSort('totalMinutes')">
+            @click="setSort('totalMinutes')"
+          >
             Total Time
           </td>
 
           <td
             v-if="!isMobile"
             :class="getHeaderClass('topLanguage')"
-            @click="setSort('topLanguage')">
+            @click="setSort('topLanguage')"
+          >
             Top Language
           </td>
 
           <td
             v-if="!isMobile"
             :class="getHeaderClass('topEditor')"
-            @click="setSort('topEditor')">
+            @click="setSort('topEditor')"
+          >
             Top Editor
           </td>
 
           <td
             v-if="!isMobile"
             :class="getHeaderClass('topOS')"
-            @click="setSort('topOS')">
+            @click="setSort('topOS')"
+          >
             Top OS
           </td>
         </tr>
@@ -66,7 +70,7 @@ interface LeaderboardUser {
 }
 
 const { data: leaderboard } = await useFetch<LeaderboardUser[]>(
-  "/api/public/leaderboard"
+  "/api/public/leaderboard",
 );
 
 const isMobile = ref(false);

@@ -4,7 +4,8 @@
       <LeaderboardSetup
         v-if="!leaderboardFirstSet"
         :user="userState || null"
-        @updated="onLeaderboardUpdated" />
+        @updated="onLeaderboardUpdated"
+      />
 
       <div class="chart-container">
         <div class="chart" ref="chartContainer"></div>
@@ -16,7 +17,8 @@
             <h2>PROJECTS</h2>
             <p
               class="extend"
-              @click="openListModal('Projects', sortedProjects)">
+              @click="openListModal('Projects', sortedProjects)"
+            >
               <LucideMaximize :size="16" />
               DETAILS
             </p>
@@ -35,7 +37,8 @@
                       ).toFixed(1)
                     : 0
                 }%`,
-              }">
+              }"
+            >
               <div class="name">{{ project.name }}</div>
               <div class="percentage">
                 {{ ((project.seconds / stats.totalSeconds) * 100).toFixed(1) }}%
@@ -51,7 +54,8 @@
             <h2>LANGUAGES</h2>
             <p
               class="extend"
-              @click="openListModal('Languages', languageBreakdown)">
+              @click="openListModal('Languages', languageBreakdown)"
+            >
               <LucideMaximize :size="16" />
               DETAILS
             </p>
@@ -71,7 +75,8 @@
                       ).toFixed(1)
                     : 0
                 }%`,
-              }">
+              }"
+            >
               <div class="name">{{ language.name || "Unknown" }}</div>
               <div class="percentage">
                 {{
@@ -91,7 +96,8 @@
             <h2>EDITORS</h2>
             <p
               class="extend"
-              @click="openListModal('Editors', editorBreakdown)">
+              @click="openListModal('Editors', editorBreakdown)"
+            >
               <LucideMaximize :size="16" />
               DETAILS
             </p>
@@ -110,7 +116,8 @@
                       ).toFixed(1)
                     : 0
                 }%`,
-              }">
+              }"
+            >
               <div class="name">{{ editor.name || "Unknown" }}</div>
               <div class="percentage">
                 {{ ((editor.seconds / stats.totalSeconds) * 100).toFixed(1) }}%
@@ -145,7 +152,8 @@
                       ).toFixed(1)
                     : 0
                 }%`,
-              }">
+              }"
+            >
               <div class="name">{{ file.name || "Unknown" }}</div>
               <div class="percentage">
                 {{ ((file.seconds / stats.totalSeconds) * 100).toFixed(1) }}%
@@ -163,7 +171,8 @@
             <h2>OPERATING SYSTEMS</h2>
             <p
               class="extend"
-              @click="openListModal('Operating Systems', osBreakdown)">
+              @click="openListModal('Operating Systems', osBreakdown)"
+            >
               <LucideMaximize :size="16" />
               DETAILS
             </p>
@@ -179,7 +188,8 @@
                     ? ((os.seconds / osBreakdown[0]!.seconds) * 100).toFixed(1)
                     : 0
                 }%`,
-              }">
+              }"
+            >
               <div class="name">{{ os.name || "Unknown" }}</div>
               <div class="percentage">
                 {{ ((os.seconds / stats.totalSeconds) * 100).toFixed(1) }}%
@@ -197,7 +207,8 @@
             <h2>BRANCHES</h2>
             <p
               class="extend"
-              @click="openListModal('Branches', branchBreakdown)">
+              @click="openListModal('Branches', branchBreakdown)"
+            >
               <LucideMaximize :size="16" />
               DETAILS
             </p>
@@ -216,7 +227,8 @@
                       ).toFixed(1)
                     : 0
                 }%`,
-              }">
+              }"
+            >
               <div class="name">{{ branch.name || "Unknown" }}</div>
               <div class="percentage">
                 {{ ((branch.seconds / stats.totalSeconds) * 100).toFixed(1) }}%
@@ -237,7 +249,8 @@
       :items="modalItems"
       :totalSeconds="stats.totalSeconds"
       :formatTime="formatTime"
-      @close="showListModal = false" />
+      @close="showListModal = false"
+    />
   </NuxtLayout>
 </template>
 
@@ -266,7 +279,7 @@ Chart.register(
   PointElement,
   LineController,
   Tooltip,
-  Filler
+  Filler,
 );
 
 type ItemWithTime = {
@@ -287,7 +300,7 @@ if (!userState.value) {
 }
 
 const leaderboardFirstSet = computed(
-  () => userState.value?.leaderboardFirstSet ?? false
+  () => userState.value?.leaderboardFirstSet ?? false,
 );
 
 const {
@@ -338,7 +351,7 @@ watch(
       updateChart();
     }
   },
-  { immediate: true, deep: true }
+  { immediate: true, deep: true },
 );
 
 const sortedProjects = computed(() => {
@@ -348,7 +361,7 @@ const sortedProjects = computed(() => {
     ([name, seconds]) => ({
       name,
       seconds: seconds as number,
-    })
+    }),
   );
 
   if (projectSort.value === "time") {
@@ -365,7 +378,7 @@ const languageBreakdown = computed(() => {
     ([name, seconds]) => ({
       name: name || "Unknown",
       seconds: seconds as number,
-    })
+    }),
   );
 
   return languages.sort((a, b) => b.seconds - a.seconds);
@@ -378,7 +391,7 @@ const editorBreakdown = computed(() => {
     ([name, seconds]) => ({
       name: name || "Unknown",
       seconds: seconds as number,
-    })
+    }),
   );
 
   return editors.sort((a, b) => b.seconds - a.seconds);
@@ -391,7 +404,7 @@ const osBreakdown = computed(() => {
     ([name, seconds]) => ({
       name: name || "Unknown",
       seconds: seconds as number,
-    })
+    }),
   );
 
   return osArray.sort((a, b) => b.seconds - a.seconds);
@@ -404,7 +417,7 @@ const fileBreakdown = computed(() => {
     ([name, seconds]) => ({
       name: name || "Unknown",
       seconds: seconds as number,
-    })
+    }),
   );
 
   return files.sort((a, b) => b.seconds - a.seconds);
@@ -417,7 +430,7 @@ const branchBreakdown = computed(() => {
     ([name, seconds]) => ({
       name: name || "Unknown",
       seconds: seconds as number,
-    })
+    }),
   );
 
   return branches.sort((a, b) => b.seconds - a.seconds);
@@ -702,7 +715,7 @@ function getChartConfig() {
       const lastMonthStart = new Date(
         today.getFullYear(),
         today.getMonth() - 1,
-        1
+        1,
       );
       const lastMonthEnd = new Date(today.getFullYear(), today.getMonth(), 0);
 
@@ -740,7 +753,7 @@ function getChartConfig() {
         const monthName = months[date.getMonth()] as string;
         monthlyTotals.set(
           monthName,
-          (monthlyTotals.get(monthName) || 0) + summary.totalSeconds / 3600
+          (monthlyTotals.get(monthName) || 0) + summary.totalSeconds / 3600,
         );
       }
 
@@ -755,7 +768,7 @@ function getChartConfig() {
     case "all-time": {
       if (stats.value?.summaries?.length > 0) {
         const dates = stats.value.summaries.map(
-          (summary) => new Date(summary.date)
+          (summary) => new Date(summary.date),
         );
         const minDate = new Date(Math.min(...dates.map((d) => d.getTime())));
         const maxDate = new Date(Math.max(...dates.map((d) => d.getTime())));
@@ -765,7 +778,7 @@ function getChartConfig() {
           let currentDate = new Date(
             minDate.getFullYear(),
             minDate.getMonth(),
-            1
+            1,
           );
 
           while (currentDate <= maxDate) {

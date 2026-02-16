@@ -5,7 +5,7 @@
 <script setup lang="ts">
 defineProps({
   keyName: String,
-  red: Boolean
+  red: Boolean,
 });
 </script>
 

@@ -5,12 +5,14 @@
       @submit.prevent="authenticate"
       class="auth"
       autocomplete="on"
-      data-form-type="login">
+      data-form-type="login"
+    >
       <UiInput
         v-model="adminKey"
         placeholder="Enter Admin Key"
         type="password"
-        :icon="LucideKeyRound" />
+        :icon="LucideKeyRound"
+      />
       <UiButton text="Authenticate" keyName="enter" @click="authenticate" />
     </form>
 
@@ -25,32 +27,38 @@
           </td>
           <td
             :class="getHeaderClass('github_username')"
-            @click="setSort('github_username')">
+            @click="setSort('github_username')"
+          >
             GitHub
           </td>
           <td
             :class="getHeaderClass('total_minutes')"
-            @click="setSort('total_minutes')">
+            @click="setSort('total_minutes')"
+          >
             Total Hours
           </td>
           <td
             :class="getHeaderClass('heartbeats')"
-            @click="setSort('heartbeats')">
+            @click="setSort('heartbeats')"
+          >
             Heartbeats
           </td>
           <td
             :class="getHeaderClass('summaries')"
-            @click="setSort('summaries')">
+            @click="setSort('summaries')"
+          >
             Summaries
           </td>
           <td
             :class="getHeaderClass('created_at')"
-            @click="setSort('created_at')">
+            @click="setSort('created_at')"
+          >
             Created At
           </td>
           <td
             :class="getHeaderClass('last_login')"
-            @click="setSort('last_login')">
+            @click="setSort('last_login')"
+          >
             Last Login
           </td>
         </tr>
@@ -140,7 +148,7 @@ const { data: adminUsers, refresh } = await useFetch<AdminUser[]>(
       isAuthenticated.value = false;
       cookie.value = null;
     },
-  }
+  },
 );
 
 async function authenticate() {

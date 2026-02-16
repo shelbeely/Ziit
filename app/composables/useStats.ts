@@ -132,7 +132,7 @@ export const useStats = () => {
       url.searchParams.append("timeRange", timeRange.value);
       url.searchParams.append(
         "midnightOffsetSeconds",
-        timezoneOffsetSeconds.toString()
+        timezoneOffsetSeconds.toString(),
       );
 
       if (timeRange.value === TimeRangeEnum.TODAY) {
