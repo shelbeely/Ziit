@@ -495,7 +495,6 @@ function renderChart() {
           pointHoverRadius: 6,
           fill: "start",
           backgroundColor: "rgba(255, 98, 0, 0.12)",
-          tension: 0.2,
           stepped: false,
         },
       ],

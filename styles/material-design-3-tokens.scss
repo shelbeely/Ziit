@@ -151,17 +151,18 @@
   --md3-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
   --md3-motion-easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
   
-  // Spacing scale (8px base)
-  --md3-spacing-1: 4px;
-  --md3-spacing-2: 8px;
-  --md3-spacing-3: 12px;
-  --md3-spacing-4: 16px;
-  --md3-spacing-5: 20px;
-  --md3-spacing-6: 24px;
-  --md3-spacing-7: 28px;
-  --md3-spacing-8: 32px;
-  --md3-spacing-9: 36px;
-  --md3-spacing-10: 40px;
-  --md3-spacing-12: 48px;
-  --md3-spacing-16: 64px;
+  // Spacing scale (8px base unit, using 0.5x multipliers for smaller values)
+  --md3-spacing-0: 0px;
+  --md3-spacing-1: 4px;    // 0.5x base
+  --md3-spacing-2: 8px;    // 1x base
+  --md3-spacing-3: 12px;   // 1.5x base
+  --md3-spacing-4: 16px;   // 2x base
+  --md3-spacing-5: 20px;   // 2.5x base
+  --md3-spacing-6: 24px;   // 3x base
+  --md3-spacing-7: 28px;   // 3.5x base
+  --md3-spacing-8: 32px;   // 4x base
+  --md3-spacing-9: 36px;   // 4.5x base
+  --md3-spacing-10: 40px;  // 5x base
+  --md3-spacing-12: 48px;  // 6x base
+  --md3-spacing-16: 64px;  // 8x base
 }
