@@ -488,13 +488,13 @@ function renderChart() {
         {
           label: "Coding Time (hours)",
           data: chartConfig.data,
-          borderColor: "#ff6200",
+          borderColor: "rgb(255, 98, 0)",
           borderWidth: 3,
-          pointBackgroundColor: "#ff6200",
+          pointBackgroundColor: "rgb(255, 98, 0)",
           pointRadius: 0,
-          pointHoverRadius: 4,
+          pointHoverRadius: 6,
           fill: "start",
-          tension: 0,
+          backgroundColor: "rgba(255, 98, 0, 0.12)",
           stepped: false,
         },
       ],
@@ -502,14 +502,17 @@ function renderChart() {
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      animation: false,
+      animation: {
+        duration: 300,
+        easing: "easeInOutCubic",
+      },
       elements: {
         line: {
-          tension: 0,
-          borderJoinStyle: "miter",
+          tension: 0.2,
+          borderJoinStyle: "round",
         },
         point: {
-          hitRadius: 10,
+          hitRadius: 12,
         },
       },
       scales: {
@@ -524,7 +527,7 @@ function renderChart() {
               size: 12,
               family: "ChivoMono",
             },
-            color: "#666666",
+            color: "rgb(157, 142, 129)",
           },
           border: {
             display: false,
@@ -536,7 +539,7 @@ function renderChart() {
             display: false,
           },
           grid: {
-            color: "rgba(255, 255, 255, 0.05)",
+            color: "rgba(157, 142, 129, 0.2)",
             drawTicks: false,
           },
           ticks: {
@@ -544,8 +547,8 @@ function renderChart() {
               size: 12,
               family: "ChivoMono",
             },
-            color: "#666666",
-            padding: 8,
+            color: "rgb(157, 142, 129)",
+            padding: 12,
             callback: function (value) {
               const numValue = Number(value);
               if (numValue === 0) return "0m";
@@ -563,13 +566,13 @@ function renderChart() {
       },
       plugins: {
         tooltip: {
-          backgroundColor: "#2b2b2b",
-          borderColor: "#ffffff1a",
+          backgroundColor: "rgb(30, 32, 28)",
+          borderColor: "rgb(79, 69, 57)",
           borderWidth: 1,
-          titleColor: "#e6e6e6",
-          bodyColor: "#e6e6e6",
-          padding: 12,
-          cornerRadius: 0,
+          titleColor: "rgb(227, 226, 222)",
+          bodyColor: "rgb(227, 226, 222)",
+          padding: 16,
+          cornerRadius: 12,
           displayColors: false,
           titleFont: {
             family: "ChivoMono",
