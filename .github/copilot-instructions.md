@@ -49,8 +49,8 @@ This repository uses [skills.sh](https://skills.sh) for reusable agent capabilit
 # Find skills related to testing
 npx skills find testing
 
-# Install a linting skill
-npx skills add vercel-labs/skills/eslint-config
+# Install a skill from agent-skills repository
+npx skills add vercel-labs/agent-skills --skill vercel-react-best-practices
 
 # List installed skills
 npx skills list
